@@ -1,0 +1,10 @@
+C:\Users\Даринка\documents\visual studio 2010\Projects\DPlab1\DPMatrForm\bin\Debug\DPMatrForm.exe
+C:\Users\Даринка\documents\visual studio 2010\Projects\DPlab1\DPMatrForm\bin\Debug\DPMatrForm.pdb
+C:\Users\Даринка\documents\visual studio 2010\Projects\DPlab1\DPMatrForm\obj\x86\Debug\DPMatrForm.Properties.Resources.resources
+C:\Users\Даринка\documents\visual studio 2010\Projects\DPlab1\DPMatrForm\obj\x86\Debug\DPMatrForm.csproj.GenerateResource.Cache
+C:\Users\Даринка\documents\visual studio 2010\Projects\DPlab1\DPMatrForm\obj\x86\Debug\DPMatrForm.exe
+C:\Users\Даринка\documents\visual studio 2010\Projects\DPlab1\DPMatrForm\obj\x86\Debug\DPMatrForm.pdb
+C:\Users\Даринка\documents\visual studio 2010\Projects\DPlab1\DPMatrForm\obj\x86\Debug\DPMatrForm.csprojResolveAssemblyReference.cache
+C:\Users\Даринка\documents\visual studio 2010\Projects\DPlab1\DPMatrForm\bin\Debug\DPlab1.exe
+C:\Users\Даринка\documents\visual studio 2010\Projects\DPlab1\DPMatrForm\bin\Debug\DPlab1.pdb
+C:\Users\Даринка\documents\visual studio 2010\Projects\DPlab1\DPMatrForm\obj\x86\Debug\DPMatrForm.MatrixForm.resources

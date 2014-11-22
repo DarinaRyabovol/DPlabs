@@ -1,0 +1,4 @@
+C:\Users\Даринка\Documents\Visual Studio 2010\Projects\DPlab1\DPlab1\bin\Debug\DPlab1.exe
+C:\Users\Даринка\Documents\Visual Studio 2010\Projects\DPlab1\DPlab1\bin\Debug\DPlab1.pdb
+C:\Users\Даринка\Documents\Visual Studio 2010\Projects\DPlab1\DPlab1\obj\x86\Debug\DPlab1.exe
+C:\Users\Даринка\Documents\Visual Studio 2010\Projects\DPlab1\DPlab1\obj\x86\Debug\DPlab1.pdb

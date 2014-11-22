@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPlab1", "DPlab1\DPlab1.csproj", "{0166D26F-2E89-4B92-B8EE-4DAA50649FC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPMatrForm", "DPMatrForm\DPMatrForm.csproj", "{0371E490-37AA-422E-BF1C-78A39E62B4BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0166D26F-2E89-4B92-B8EE-4DAA50649FC2}.Debug|x86.ActiveCfg = Debug|x86
+		{0166D26F-2E89-4B92-B8EE-4DAA50649FC2}.Debug|x86.Build.0 = Debug|x86
+		{0166D26F-2E89-4B92-B8EE-4DAA50649FC2}.Release|x86.ActiveCfg = Release|x86
+		{0166D26F-2E89-4B92-B8EE-4DAA50649FC2}.Release|x86.Build.0 = Release|x86
+		{0371E490-37AA-422E-BF1C-78A39E62B4BF}.Debug|x86.ActiveCfg = Debug|x86
+		{0371E490-37AA-422E-BF1C-78A39E62B4BF}.Debug|x86.Build.0 = Debug|x86
+		{0371E490-37AA-422E-BF1C-78A39E62B4BF}.Release|x86.ActiveCfg = Release|x86
+		{0371E490-37AA-422E-BF1C-78A39E62B4BF}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
