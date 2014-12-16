@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DPlab1;
 
 namespace DPMatrForm
 {
@@ -31,7 +30,26 @@ namespace DPMatrForm
         {
             return matrix.GetNumberOfRows();
         }
-
+        public void accept(IVisitor v)
+        {
+            if (typeof(OriginMatrix) == whoAmI())
+            {
+                v.visitOriginMatrix(this);
+            }
+            else
+            {
+                v.visitSparceMatrix(this);
+            }
+        }
+        public Type whoAmI()
+        {
+            if ((matrix.GetType() == typeof(OriginMatrix)) || (matrix.GetType() == typeof(SparceMatrix)))
+            {
+                return matrix.GetType();
+            }
+            return ((Decorator)matrix).whoAmI();
+        }
+           
         private IMatrix matrix;
     }
 

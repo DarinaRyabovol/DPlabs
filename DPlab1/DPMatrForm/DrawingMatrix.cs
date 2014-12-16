@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DPlab1;
 using System.Drawing;
 
 namespace DPMatrForm
 {
-    public abstract class DrawingMatrix : IMatrix
+    public abstract class DrawingMatrix 
     {
         public DrawingMatrix(IMatrix m, IPainter painter)
         {

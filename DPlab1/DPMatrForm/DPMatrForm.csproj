@@ -60,7 +60,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IMatrix.cs" />
+    <Compile Include="InitMatrix.cs" />
     <Compile Include="IPainter.cs" />
+    <Compile Include="IVector.cs" />
+    <Compile Include="IVisitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

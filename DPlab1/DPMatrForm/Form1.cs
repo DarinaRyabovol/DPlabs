@@ -6,30 +6,30 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using DPlab1;
+
 namespace DPMatrForm
 {
     public partial class MatrixForm : Form
     {
-        private DrawingMatrix origM;
-        private DrawingMatrix sparM;
+        private IVisitor Visitor;
         private IPainter painter1;
         private IPainter painter2;
         private static OriginMatrix m1;
         private static SparceMatrix m2;
-        private int x1 = 200;
-        private int x2 = 470;
-        private int y = 20;
-        private int sizeM = 4;
         private Decorator origDecorator;
         private Decorator sparceDecorator;
+        private int x1 = 200;
+        private int x2 = 470;
+        private int y = 40;
+        private int sizeM = 4;
+        private int notNull = 12;
+        private int maxInt = 20;
 
         public MatrixForm()
         {
             InitializeComponent();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
         }
-
 
 
         private void InitPainter()
@@ -60,7 +60,7 @@ namespace DPMatrForm
 
         private void UpdateMe()
         {
-            if (origM == null)
+            if (m1 == null)
                 return;
             List<BorderOfMatrix> controls = new List<BorderOfMatrix>(0);
             foreach (System.Windows.Forms.Control cnt in this.Controls)
@@ -74,10 +74,26 @@ namespace DPMatrForm
             {
                 this.Controls.Remove(bm);
             }
-            origM.SetPainter(painter1);
-            sparM.SetPainter(painter2);
-            origM.Paint();
-            sparM.Paint();
+            InitPainter();
+
+            Visitor = new DrawVisitor(painter1);
+            if (origDecorator != null)
+            {
+                origDecorator.accept(Visitor);
+            }
+            else
+            {
+                m1.accept(Visitor);
+            }
+            Visitor = new DrawVisitor(painter2);
+            if (sparceDecorator != null)
+            {
+                sparceDecorator.accept(Visitor);
+            }
+            else
+            {
+                m2.accept(Visitor);
+            }
         }
 
         private void InitColorPainters()
@@ -110,8 +126,7 @@ namespace DPMatrForm
 
         private void genButton_Click(object sender, EventArgs e)
         {
-            origM = null;
-            sparM = null;
+            Visitor = null;
             origDecorator = null;
             sparceDecorator = null;
             cancelButton.Enabled = false;
@@ -121,11 +136,8 @@ namespace DPMatrForm
             transpButton.Enabled = true;
             m1 = new OriginMatrix(sizeM, sizeM);
             m2 = new SparceMatrix(sizeM, sizeM);
-            InitMatrix.Init(m1, 10, 20);
+            InitMatrix.Init(m1, notNull, maxInt);
             InitMatrix.Init(m1, m2);
-            InitPainter();
-            origM = new OriginDrawingMatrix(m1, painter1);
-            sparM = new SparceDrawingMatrix(m2, painter2);
             UpdateMe();
         }
 
@@ -172,18 +184,13 @@ namespace DPMatrForm
                 cancelButton.Enabled = false;
                 origDecorator = null;
                 sparceDecorator = null;
-                origM = new OriginDrawingMatrix(m1, painter1);
-                sparM = new SparceDrawingMatrix(m2, painter2);
                 clearButton.Enabled = false;
             }
             else
             {
                 origDecorator = (Decorator)origDecorator.Matrix;
                 sparceDecorator = (Decorator)sparceDecorator.Matrix;
-                origM = new OriginDrawingMatrix(origDecorator, painter1);
-                sparM = new SparceDrawingMatrix(sparceDecorator, painter2);
             }
-            InitPainter();
             UpdateMe();
         }
 
@@ -191,11 +198,9 @@ namespace DPMatrForm
         {
             clearButton.Enabled = false;
             cancelButton.Enabled = false;
-            InitPainter();
             origDecorator = null;
             sparceDecorator = null;
-            origM = new OriginDrawingMatrix(m1, painter1);
-            sparM = new SparceDrawingMatrix(m2, painter2);
+
             UpdateMe();
         }
 
@@ -213,9 +218,6 @@ namespace DPMatrForm
                 origDecorator = new RenumberRowsDecorator(origDecorator);
                 sparceDecorator = new RenumberRowsDecorator(sparceDecorator);
             }
-            InitPainter();
-            origM = new OriginDrawingMatrix(origDecorator, painter1);
-            sparM = new SparceDrawingMatrix(sparceDecorator, painter2);
             UpdateMe();
         }
 
@@ -233,9 +235,6 @@ namespace DPMatrForm
                 origDecorator = new RenumberColsDecorator(origDecorator);
                 sparceDecorator = new RenumberColsDecorator(sparceDecorator);
             }
-            InitPainter();
-            origM = new OriginDrawingMatrix(origDecorator, painter1);
-            sparM = new SparceDrawingMatrix(sparceDecorator, painter2);
             UpdateMe();
         }
 
@@ -253,9 +252,7 @@ namespace DPMatrForm
                 origDecorator = new TransposeDecorator(origDecorator);
                 sparceDecorator = new TransposeDecorator(sparceDecorator);
             }
-            InitPainter();
-            origM = new OriginDrawingMatrix(origDecorator, painter1);
-            sparM = new SparceDrawingMatrix(sparceDecorator, painter2);
+
             UpdateMe();
         }
 
